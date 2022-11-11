@@ -34,23 +34,19 @@ export default {
           <div class="row">
             <div class="col-4 col-12-medium">
               <header>
-                <h2>Odio faucibus ipsum integer consequat</h2>
-                <p>Nascetur eu nibh vestibulum amet gravida nascetur praesent</p>
+                <h2>Education</h2>
+                <p>Actualize Graduate and Assocatiates in the Applied Sceiences of 3D Modeling and Animation </p>
               </header>
             </div>
             <div class="col-4 col-12-medium">
-              <p>Feugiat accumsan lorem eu ac lorem amet sed accumsan donec.
-                Blandit orci porttitor semper. Arcu phasellus tortor enim mi
-                nisi praesent dolor adipiscing. Integer mi sed nascetur cep aliquet
-                augue varius tempus lobortis porttitor accumsan consequat
-                adipiscing lorem dolor.</p>
+              <p>Having recently finished my software engineering bootcamp with Actualize, I am well versed in the
+                programming languages of Ruby, Javascript, Css, and HTML, and have recently taught myself Python. Beyond
+                that, I also use Ruby on Rails, Vue.js, Django, Bootstrap for website development.</p>
             </div>
             <div class="col-4 col-12-medium">
-              <p>Morbi enim nascetur et placerat lorem sed iaculis neque ante
-                adipiscing adipiscing metus massa. Blandit orci porttitor semper.
-                Arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
-                mi sed nascetur cep aliquet augue varius tempus. Feugiat lorem
-                ipsum dolor nullam.</p>
+              <p>For my 3D art, I am mainly a Character and Creature Design artist, with a majority revolving around
+                table top miniature creation and VrChat models. To these ends, I use Blender, 3Ds Max, Zbrush,
+                Substaince Painter and Designer, and Unity.</p>
             </div>
           </div>
         </div>
@@ -63,15 +59,23 @@ export default {
       <span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
       <div class="content">
         <header>
-          <h2>Interdum amet non magna accumsan</h2>
-          <p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
+          <h2>My Work History!</h2>
+          <h3>KJ Studios (Freelance) | 3D Modeler</h3>
+          <h1>Produced 12 character models to be imported and used in the videogame VRChat using programs such as
+            Blender, Zbrush, Substance Painter/Designer, Unity, and model databases for foreign game model integration
+          </h1>
+          <h1>Determined client specifications, goals, budget, and timeline in order to create animated introductions
+            for content creators.</h1>
+          <h3>Total Wine | Merchandiser</h3>
+          <h1>Managed store online ordering operations including processing orders, cataloging inventory, and
+            facilitating curbside pickup.
+          </h1>
+          <h1>Trained 8 new employees on store software, product locations, and customer service skills
+          </h1>
         </header>
-        <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
-          mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing
-          lorem.
-        </p>
+        <!-- <p>{{ this.workJournal.post }}</p> -->
         <ul class="actions">
-          <li><a href="#" class="button">Learn More</a></li>
+          <li><a href="#" class="button">Read More</a></li>
         </ul>
       </div>
       <a href="#three" class="goto-next scrolly">Next</a>
@@ -82,13 +86,14 @@ export default {
       <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
       <div class="content">
         <header>
-          <h2>Interdum felis blandit praesent sed augue</h2>
-          <p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
+          <h2>Work Journal</h2>
+          <!-- <h2>{{ this.workJournal.title }}</h2> -->
         </header>
-        <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
-          mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing
-          lorem.
-        </p>
+        <!-- <p>{{this.workJournal.postNumber}} -->
+        <h2>Problems</h2>
+        <!-- <p>{{this.workJournal.problems}}</p> -->
+        <h2>Goals</h2>
+        <!-- <p>{{this.workJournal.goals}}</p> -->
         <ul class="actions">
           <li><a href="#" class="button">Learn More</a></li>
         </ul>
@@ -100,8 +105,8 @@ export default {
     <section id="four" class="wrapper style1 special fade-up">
       <div class="container">
         <header class="major">
-          <h2>Accumsan sed tempus adipiscing blandit</h2>
-          <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+          <h2>My Projects!</h2>
+          <p>Below are links to both my websites and apps that I have developed, are WIP's, and my Art Portfolio!</p>
         </header>
         <div class="box alt">
           <div class="row gtr-uniform">
@@ -149,8 +154,8 @@ export default {
     <section id="five" class="wrapper style2 special fade">
       <div class="container">
         <header>
-          <h2>Magna faucibus lorem diam</h2>
-          <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+          <h2>Get In Contact Me!</h2>
+          <p>Enter your contact email below and I'll get back to you asap!</p>
         </header>
         <form method="post" action="#" class="cta">
           <div class="row gtr-uniform gtr-50">
