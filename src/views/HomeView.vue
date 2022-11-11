@@ -111,19 +111,23 @@ export default {
         <div class="box alt">
           <div class="row gtr-uniform">
             <section class="col-4 col-6-medium col-12-xsmall">
-              <span class="icon solid alt major fa-chart-area"></span>
-              <h3>Ipsum sed commodo</h3>
-              <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+              <span class="icon solid alt major fa-dumbbell"></span>
+              <h3>Workout your Workouts!</h3>
+              <p>A website built to customize workouts with a database of over 1300+ exercises using a backend RESTful
+                API with MVC architecture built with Ruby on Rails, and a frontend multi page
+                application built with npm, webpack, Vue.js, and Bootstrap.</p>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <span class="icon solid alt major fa-comment"></span>
-              <h3>Eleifend lorem ornare</h3>
-              <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+              <span class="icon solid alt major fa-cube"></span>
+              <h3>My Sketchfab</h3>
+              <p>Here is where I post a lot of my 3D art! Its hosted on a website where it is rendered and manipulatable
+                in a 360 degree fashion, its a
+                perfect website for any 3D artist!</p>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <span class="icon solid alt major fa-flask"></span>
-              <h3>Cubilia cep lobortis</h3>
-              <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+              <span class="icon solid alt major fa-code-branch"></span>
+              <h3>My Github</h3>
+              <p>Here is where you will find most, if not all, of my projects!</p>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
               <span class="icon solid alt major fa-paper-plane"></span>
