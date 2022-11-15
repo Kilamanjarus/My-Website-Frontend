@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import BlogCreate from '../views/BlogCreate.vue'
-import BlogsView from '../views/BlogsView.vue'
+import JournalCreate from '../views/JournalCreate.vue'
+import JournalsView from '../views/JournalsView.vue'
 import MyArtView from '../views/MyArtView.vue'
 import RandomInterestView from '../views/RandomInterestView.vue'
 
@@ -12,14 +12,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/blognew',
-    name: 'blogCreate',
-    component: BlogCreate
+    path: '/journalnew',
+    name: 'journalCreate',
+    component: JournalCreate
   },
   {
-    path: '/blogs',
-    name: 'blogs',
-    component: BlogsView
+    path: '/journals',
+    name: 'journals',
+    component: JournalsView
   },
   {
     path: '/art',

@@ -5,14 +5,27 @@ export default {
   data: function () {
     return {
       message: "Welcome to my Website!",
+      journalPosts: [],
+      journalPost: {},
+
+      email: { email: "Enter Your Email Here." },
     };
   },
   created: function () {
-    this.blogPostIndex()
+    this.journalPostIndex()
   },
   methods: {
-    blogPostIndex: function () {
+    journalPostIndex: function () {
       axios.get("http://localhost:3000/blogs").then(response => {
+        // console.log(response.data)
+        this.journalPosts = response.data
+        this.journalPost = this.journalPosts[this.journalPosts.length - 1]
+        // console.log(this.journalPosts)
+        // console.log(this.journalPost)
+      })
+    },
+    contactEmailPost: function () {
+      axios.post("http://localhost:3000/emails", this.email).then(response => {
         console.log(response.data)
       })
     }
@@ -31,21 +44,21 @@ export default {
           <h2>Maxwell Lillie</h2>
           <p>Full-Stack Software Engineer, Freelance 3D Artist</p>
         </header>
-        <span class="image"><img src="images/pic01.jpg" alt="" /></span>
+        <span class="image"><img src="images/Me.jpg" alt="" /></span>
       </div>
       <a href="#one" class="goto-next scrolly">Next</a>
     </section>
 
     <!-- One -->
     <section id="one" class="spotlight style1 bottom">
-      <span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+      <span class="image fit main"><img src="images/background-1.jpeg" alt="" /></span>
       <div class="content">
         <div class="container">
           <div class="row">
             <div class="col-4 col-12-medium">
               <header>
-                <h2>Education</h2>
-                <p>Actualize Graduate and Assocatiates in the Applied Sceiences of 3D Modeling and Animation </p>
+                <h2><u>Education</u></h2>
+                <p><b>Actualize Graduate and Assocatiates in the Applied Sceiences of 3D Modeling and Animation </b></p>
               </header>
             </div>
             <div class="col-4 col-12-medium">
@@ -69,24 +82,26 @@ export default {
       <span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
       <div class="content">
         <header>
-          <h2>My Work History!</h2>
-          <h3>KJ Studios (Freelance) | 3D Modeler</h3>
-          <h1>Produced 12 character models to be imported and used in the videogame VRChat using programs such as
+          <h2 class="side-bar-head">My Skills and Work History!</h2>
+          <h3 class="side-bar-title">Programming Languages and Frameworks!</h3>
+          <h1 class="side-bar-text">Ruby, Ruby on Rails, Javascript, Vue.js, HTML, CSS, Python, Django</h1>
+          <h3 class="side-bar-title">KJ Studios (Freelance) | 3D Modeler</h3>
+          <h1 class="side-bar-text">Produced 12 character models to be imported and used in the videogame VRChat using
+            programs such as
             Blender, Zbrush, Substance Painter/Designer, Unity, and model databases for foreign game model integration
           </h1>
-          <h1>Determined client specifications, goals, budget, and timeline in order to create animated introductions
+          <h1 class="side-bar-text">Determined client specifications, goals, budget, and timeline in order to create
+            animated introductions
             for content creators.</h1>
-          <h3>Total Wine | Merchandiser</h3>
-          <h1>Managed store online ordering operations including processing orders, cataloging inventory, and
+          <h3 class="side-bar-title">Total Wine | Merchandiser</h3>
+          <h1 class="side-bar-text">Managed store online ordering operations including processing orders, cataloging
+            inventory, and
             facilitating curbside pickup.
           </h1>
-          <h1>Trained 8 new employees on store software, product locations, and customer service skills
+          <h1 class="side-bar-text">Trained 8 new employees on store software, product locations, and customer service
+            skills
           </h1>
         </header>
-        <!-- <p>{{ this.workJournal.post }}</p> -->
-        <ul class="actions">
-          <li><a href="#" class="button">Read More</a></li>
-        </ul>
       </div>
       <a href="#three" class="goto-next scrolly">Next</a>
     </section>
@@ -96,16 +111,16 @@ export default {
       <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
       <div class="content">
         <header>
-          <h2>Work Journal</h2>
-          <!-- <h2>{{ this.workJournal.title }}</h2> -->
+          <h2 class="side-bar-head">Work Journal #{{ this.journalPosts.length }}</h2>
+          <h2 class="side-bar-title">{{ this.journalPost.title }}</h2>
         </header>
-        <!-- <p>{{this.workJournal.id}} -->
-        <h2>Problems</h2>
-        <!-- <p>{{this.workJournal.problems}}</p> -->
-        <h2>Goals</h2>
-        <!-- <p>{{this.workJournal.goals}}</p> -->
+        <h1 class="side-bar-text">{{ this.journalPost.post }}</h1>
+        <h3 class="side-bar-title">Problems</h3>
+        <h1 class="side-bar-text">{{ this.journalPost.problems }}</h1>
+        <h3 class="side-bar-title">Goals</h3>
+        <h1 class="side-bar-text">{{ this.journalPost.goals }}</h1>
         <ul class="actions">
-          <li><a href="#" class="button">Learn More</a></li>
+          <li><a href="/journals" class="button">My Journal</a></li>
         </ul>
       </div>
       <a href="#four" class="goto-next scrolly">Next</a>
@@ -158,7 +173,7 @@ export default {
         </div>
         <footer class="major">
           <ul class="actions special">
-            <li><a href="#" class="button">Magna sed feugiat</a></li>
+            <li><a href="#" class="button">Unused Button, Decide What to Do</a></li>
           </ul>
         </footer>
       </div>
@@ -168,21 +183,49 @@ export default {
     <section id="five" class="wrapper style2 special fade">
       <div class="container">
         <header>
-          <h2>Get In Contact Me!</h2>
+          <h2>Get In Contact With Me!</h2>
           <p>Enter your contact email below and I'll get back to you asap!</p>
         </header>
-        <form method="post" action="#" class="cta">
-          <div class="row gtr-uniform gtr-50">
-            <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email"
-                placeholder="Your Email Address" /></div>
-            <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
-          </div>
-        </form>
+        <input type="email" v-model="this.email.email" class="input-email-box">
+        <button @click="this.contactEmailPost()" class="button-email">Get Started</button>
       </div>
     </section>
   </div>
 </template>
 
 <style>
+.side-bar-head {
+  font-size: 1.75em;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
 
+.side-bar-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.side-bar-text {
+  font-weight: normal;
+  color: rgb(173, 172, 172);
+}
+
+.button-email {
+  background-color: #334e6f;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+input[type="email"] {
+  display: inline-block;
+  width: 500px;
+}
 </style>

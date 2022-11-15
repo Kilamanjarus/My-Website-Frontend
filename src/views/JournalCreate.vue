@@ -2,7 +2,7 @@
 export default {
   data: function () {
     return {
-      message: "Post a new Blog!",
+      message: "Post a new Journal!",
     };
   },
   created: function () { },

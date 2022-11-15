@@ -8,8 +8,8 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li>
-            <a href="/blogs">Journal</a> |
-            <a href="/blognew">Blog Post</a> |
+            <a href="/journal">Journal</a> |
+            <a href="/journalnew">Journal Post</a> |
             <a href="/art">Art</a> |
             <a href="/interests">Random Interests</a>
           </li>
