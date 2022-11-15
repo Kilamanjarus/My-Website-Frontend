@@ -1,12 +1,22 @@
 <script>
+import axios from 'axios';
+
 export default {
   data: function () {
     return {
       message: "Welcome to my Website!",
     };
   },
-  created: function () { },
-  methods: {},
+  created: function () {
+    this.blogPostIndex()
+  },
+  methods: {
+    blogPostIndex: function () {
+      axios.get("http://localhost:3000/blogs").then(response => {
+        console.log(response.data)
+      })
+    }
+  },
 };
 
 </script>
@@ -89,7 +99,7 @@ export default {
           <h2>Work Journal</h2>
           <!-- <h2>{{ this.workJournal.title }}</h2> -->
         </header>
-        <!-- <p>{{this.workJournal.postNumber}} -->
+        <!-- <p>{{this.workJournal.id}} -->
         <h2>Problems</h2>
         <!-- <p>{{this.workJournal.problems}}</p> -->
         <h2>Goals</h2>
@@ -129,7 +139,7 @@ export default {
               <h3>My Github</h3>
               <p>Here is where you will find most, if not all, of my projects!</p>
             </section>
-            <section class="col-4 col-6-medium col-12-xsmall">
+            <!-- <section class="col-4 col-6-medium col-12-xsmall">
               <span class="icon solid alt major fa-paper-plane"></span>
               <h3>Non semper interdum</h3>
               <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
@@ -143,7 +153,7 @@ export default {
               <span class="icon solid alt major fa-lock"></span>
               <h3>Massa arcu accumsan</h3>
               <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-            </section>
+            </section> -->
           </div>
         </div>
         <footer class="major">
