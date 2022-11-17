@@ -171,11 +171,11 @@ export default {
             </section> -->
           </div>
         </div>
-        <footer class="major">
+        <!-- <footer class="major">
           <ul class="actions special">
             <li><a href="#" class="button">Unused Button, Decide What to Do</a></li>
           </ul>
-        </footer>
+        </footer> -->
       </div>
     </section>
 
