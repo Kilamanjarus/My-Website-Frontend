@@ -115,12 +115,12 @@ export default {
           <h2 class="side-bar-title">{{ this.journalPost.title }}</h2>
         </header>
         <h1 class="side-bar-text">{{ this.journalPost.post }}</h1>
-        <h3 class="side-bar-title">Problems</h3>
+        <!-- <h3 class="side-bar-title">Problems</h3>
         <h1 class="side-bar-text">{{ this.journalPost.problems }}</h1>
         <h3 class="side-bar-title">Goals</h3>
-        <h1 class="side-bar-text">{{ this.journalPost.goals }}</h1>
+        <h1 class="side-bar-text">{{ this.journalPost.goals }}</h1> -->
         <ul class="actions">
-          <li><a href="/journals" class="button">My Journal</a></li>
+          <li><a href="/journals" class="button">Read More!</a></li>
         </ul>
       </div>
       <a href="#four" class="goto-next scrolly">Next</a>
