@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 export default {
   data: function () {
     return {
@@ -7,23 +9,51 @@ export default {
       newGoalsPost: [],
       newProblemsPost: [],
 
-      newProblem: "",
-      newGoal: "",
+      jpID: 0,
+
+      newProblem: {},
+      newGoal: {},
     };
   },
   created: function () { },
   methods: {
     postJournal: function () {
-
+      axios.post("http://localhost:3000/blogs.json", this.newJournalPost).then(response => {
+        // console.log(response.data)
+        this.jpID = response.data.id
+        // console.log(this.jpID)
+        this.postGoals();
+        this.postProblems();
+      })
+    },
+    postProblems: function () {
+      this.newProblemsPost.forEach(problem => {
+        // console.log(problem)
+        problem.blog_post_id = this.jpID
+        axios.post("http://localhost:3000/problems.json", problem).then(response => {
+          // console.log(response.data)
+        })
+      })
+    },
+    postGoals: function () {
+      this.newGoalsPost.forEach(goal => {
+        // console.log(goal)
+        goal.blog_post_id = this.jpID
+        axios.post("http://localhost:3000/goals.json", goal).then(response => {
+          // console.log(response.data)
+        })
+      })
     },
     addGoal: function (goal) {
       // console.log(goal)
       this.newGoalsPost.push(goal)
+      this.newGoal = {}
       // console.log(this.newGoalsPost)
     },
     addProblem: function (problem) {
       // console.log(problem)
       this.newProblemsPost.push(problem)
+      this.newProblem = {}
       // console.log(this.newProblemsPost)
     }
   },
@@ -36,7 +66,6 @@ export default {
       <div class="container">
         <header class="major">
           <h2>New Journal Posting</h2>
-          <p>Enter Password to unlock this feature!</p>
         </header>
         <div class="row gtr-150">
           <div class="col-8 col-12-medium">
@@ -44,16 +73,24 @@ export default {
             <!-- Content -->
             <section id="content">
               <h3>Journal Post</h3>
-              <textarea class="t-area-2" v-bind="this.newJournalPost.post"></textarea>
+              <div>Title: <input v-model="newJournalPost.title" type="textarea" class="textarea-small"></div>
+              <br />
+              <textarea class="t-area-2" v-model="this.newJournalPost.post"></textarea>
             </section>
 
 
             <div>
+              <br />
+              <div>Date: <input v-model="newJournalPost.date" type="textarea" class="textarea-small"></div>
               <p></p>
-              <p>Current Problems:</p>
-              <p v-for="problem in this.newProblemsPost"> {{ problem }}</p>
-              <p>Current Goals:</p>
-              <p v-for="goal in this.newGoalsPost"> {{ goal }}</p>
+              <div>Current Problems:</div>
+              <ul>
+                <li v-for="problem in this.newProblemsPost">{{ problem.problem }}</li>
+              </ul>
+              <div>Current Goals:</div>
+              <ul>
+                <li v-for="goal in this.newGoalsPost">{{ goal.goal }}</li>
+              </ul>
             </div>
           </div>
           <div class="col-4 col-12-medium">
@@ -62,22 +99,22 @@ export default {
             <section id="sidebar">
               <section>
                 <h3>Problems</h3>
-                <textarea v-model="this.newProblem"></textarea>
+                <textarea v-model="this.newProblem.problem"></textarea>
                 <p></p>
                 <footer>
                   <ul class="actions">
-                    <li><a href="#" class="button" @click="this.addProblem(this.newProblem)">Add Problem</a></li>
+                    <li><button class="button" @click="this.addProblem(this.newProblem)">Add Problem</button></li>
                   </ul>
                 </footer>
               </section>
               <hr />
               <section>
                 <h3>Goals</h3>
-                <textarea v-model="this.newGoal"></textarea>
+                <textarea v-model="this.newGoal.goal"></textarea>
                 <p></p>
                 <footer>
                   <ul class="actions">
-                    <li><a href="#" class="button" @click="this.addGoal(this.newGoal)">Add Goal</a></li>
+                    <li><button class="button" @click="this.addGoal(this.newGoal)">Add Goal</button></li>
                   </ul>
                 </footer>
               </section>
@@ -111,6 +148,10 @@ textarea {
 
 .t-area-2 {
   height: 200px;
+}
+
+.textarea-small {
+  color: black;
 }
 
 .container-jp-button {

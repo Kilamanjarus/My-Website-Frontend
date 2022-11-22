@@ -16,16 +16,18 @@ export default {
   },
   methods: {
     journalPostIndex: function () {
-      axios.get("http://localhost:3000/blogs").then(response => {
-        // console.log(response.data)
+      axios.get("http://localhost:3000/blogs.json").then(response => {
+        console.log(response.data)
         this.journalPosts = response.data
         this.journalPost = this.journalPosts[this.journalPosts.length - 1]
         // console.log(this.journalPosts)
-        // console.log(this.journalPost)
+        console.log(this.journalPost)
+      }).catch(error => {
+        this.error = error.data
       })
     },
     contactEmailPost: function () {
-      axios.post("http://localhost:3000/emails", this.email).then(response => {
+      axios.post("http://localhost:3000/emails.json", this.email).then(response => {
         console.log(response.data)
       })
     }
@@ -37,7 +39,7 @@ export default {
 <template>
   <div id="page-wrapper">
 
-    <!-- Banner -->
+    <!-- Banner About Me -->
     <section id="banner">
       <div class="content">
         <header>
@@ -49,7 +51,7 @@ export default {
       <a href="#one" class="goto-next scrolly">Next</a>
     </section>
 
-    <!-- One -->
+    <!-- One Education -->
     <section id="one" class="spotlight style1 bottom">
       <span class="image fit main"><img src="images/background-1.jpeg" alt="" /></span>
       <div class="content">
@@ -77,7 +79,7 @@ export default {
       <a href="#two" class="goto-next scrolly">Next</a>
     </section>
 
-    <!-- Two -->
+    <!-- Two Skills and Work History -->
     <section id="two" class="spotlight style2 right">
       <span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
       <div class="content">
@@ -106,7 +108,7 @@ export default {
       <a href="#three" class="goto-next scrolly">Next</a>
     </section>
 
-    <!-- Three -->
+    <!-- Three Work Journal -->
     <section id="three" class="spotlight style3 left">
       <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
       <div class="content">
@@ -126,7 +128,7 @@ export default {
       <a href="#four" class="goto-next scrolly">Next</a>
     </section>
 
-    <!-- Four -->
+    <!-- Four My Projects -->
     <section id="four" class="wrapper style1 special fade-up">
       <div class="container">
         <header class="major">
@@ -179,7 +181,7 @@ export default {
       </div>
     </section>
 
-    <!-- Five -->
+    <!-- Five Contact Me -->
     <section id="five" class="wrapper style2 special fade">
       <div class="container">
         <header>

@@ -13,9 +13,9 @@ export default {
   },
   methods: {
     journalPostIndex: function () {
-      axios.get("http://localhost:3000/blogs").then(response => {
+      axios.get("http://localhost:3000/blogs.json").then(response => {
         console.log(response.data)
-        this.journalPosts = response.data
+        this.journalPosts = response.data.reverse()
         // this.journalPosts = this.journalPosts.reverse()
         // console.log(this.journalPosts)
         // console.log(this.journalPost)
@@ -42,11 +42,11 @@ export default {
             <p>{{ journalPost.post }}</p>
             <h3>Problems</h3>
             <ul v-for="problem in journalPost.problems">
-              <li>{{ problem }}</li>
+              <li>{{ problem.problem }}</li>
             </ul>
             <h3>Goals</h3>
             <ul v-for="goal in journalPost.goals">
-              <li>{{ goal }}</li>
+              <li>{{ goal.goal }}</li>
             </ul>
           </section>
         </div>
