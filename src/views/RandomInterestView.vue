@@ -58,7 +58,10 @@ export default {
               building, forestry, waste management, animal systems, aquaculture, appropriate technology, economics and
               community development."</li>
           </ul>
-          <a href="https://www.permaculturenews.org/what-is-permaculture/">Source</a>
+          <p>To create a farm where every element works in synergy with the next. I would love to be able to have my own
+            grocery store in my backyard! <br /> <a
+              href="https://www.permaculturenews.org/what-is-permaculture/">Source</a></p>
+
         </section>
 
       </div>
@@ -80,20 +83,13 @@ export default {
         <!-- Content -->
         <section id="content">
           <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-          <h3>Dolore Amet Consequat</h3>
-          <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros
-            ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non,
-            malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros
-            ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam cubilia adipiscing interdum aliquet
-            aliquet placerat cubilia accumsan cep ante nullam adipiscing tortor odio. Iaculis adipiscing accumsan
-            nascetur in cras. Lacinia placerat.</p>
-          <p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum.
-            Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum,
-            et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est
-            placerat tristique faucibus magna adipiscing aliquet blandit nisi dolor accumsan nascetur lorem. Vis enim.
-            Curae. Mi arcu vis aliquam ipsum non accumsan ac mi faucibus amet eu accumsan erat interdum semper accumsan.
-            Eu sagittis tellus accumsan neque lorem penatibus in porttitor. Vivamus commodo curae. Condimentum lobortis
-            praesent id ac lorem. Lorem vis ipsum dolor feugiat consequat dolore adipiscing.</p>
+          <h3>Why Care?</h3>
+          <p>Not everyone has the land to create a large Permaculture farm, and some don't own any physical land at all.
+            Aquaponics is the solution for both of these! A system the use the waste of the fish that it grows for food,
+            as food the for the plants, which also in turn, grow into healthy food for people.</p>
+          <p>As the prices of groceries only increase, a system that produces little to no waste and maximizes the
+            product that the consumer receives is a great way to help! Tilapia is the most commonly used fish in
+            aquaponics, while also being a fairly tasty fish used in food too!</p>
           <h3>Sed Magna Ornare</h3>
           <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse
             euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam
