@@ -13,11 +13,16 @@ export default {
 
       newProblem: {},
       newGoal: {},
+
+      inputName: "",
+      inputDescription: "",
+      inputPicture: null
     };
   },
   created: function () { },
   methods: {
     postJournal: function () {
+      this.newJournalPost.image = this.inputPicture
       axios.post("http://localhost:3000/blogs.json", this.newJournalPost).then(response => {
         // console.log(response.data)
         this.jpID = response.data.id
@@ -55,7 +60,10 @@ export default {
       this.newProblemsPost.push(problem)
       this.newProblem = {}
       // console.log(this.newProblemsPost)
-    }
+    },
+    uploadFile: function () {
+      this.inputPicture = this.$refs.inputFile.files[0];
+    },
   },
 };
 </script>
@@ -74,6 +82,10 @@ export default {
             <section id="content">
               <h3>Journal Post</h3>
               <div>Title: <input v-model="newJournalPost.title" type="textarea" class="textarea-small"></div>
+              <br />
+              <div>Image Attachment
+              </div>
+              <input type="file" ref="inputFile" @change=uploadFile()>
               <br />
               <textarea class="t-area-2" v-model="this.newJournalPost.post"></textarea>
             </section>
