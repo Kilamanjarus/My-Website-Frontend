@@ -62,7 +62,8 @@ export default {
       // console.log(this.newProblemsPost)
     },
     uploadFile: function () {
-      this.inputPicture = this.$refs.inputFile.files[0];
+      this.inputPicture = document.getElementById('blog-post-image').files[0];
+      console.log(this.files === null)
     },
   },
 };
@@ -85,7 +86,7 @@ export default {
               <br />
               <div>Image Attachment
               </div>
-              <input type="file" ref="inputFile" @change=uploadFile()>
+              <input type="file" id="blog-post-image" accept="image/png, image/jpeg" @change=uploadFile()>
               <br />
               <textarea class="t-area-2" v-model="this.newJournalPost.post"></textarea>
             </section>
