@@ -23,6 +23,7 @@ export default {
   methods: {
     postJournal: function () {
       this.newJournalPost.image = this.inputPicture
+
       axios.post("http://localhost:3000/blogs.json", this.newJournalPost).then(response => {
         // console.log(response.data)
         this.jpID = response.data.id
@@ -61,9 +62,15 @@ export default {
       this.newProblem = {}
       // console.log(this.newProblemsPost)
     },
-    uploadFile: function () {
-      this.inputPicture = document.getElementById('blog-post-image').files[0];
-      console.log(this.files === null)
+    previewImage: function (event) {
+      imageFiles = event.target.files;
+      imageFilesLength = this.imageFiles.length;
+      if (this.imageFilesLength > 0) {
+        imageSrc = URL.createObjectURL(imageFiles[0]);
+        imagePreviewElement = document.querySelector("#preview-selected-image");
+        this.imagePreviewElement.src = this.imageSrc;
+        this.imagePreviewElement.style.display = "block";
+      }
     },
   },
 };
@@ -86,8 +93,13 @@ export default {
               <br />
               <div>Image Attachment
               </div>
-              <input type="file" id="blog-post-image" accept="image/png, image/jpeg" @change=uploadFile()>
-              <br />
+              <div class="image-preview-container">
+                <div class="preview">
+                  <img id="preview-selected-image" />
+                </div>
+                <label for="file-upload">Upload Image</label>
+                <input type="file" id="file-upload" accept="image/*" onchange="previewImage(event)" />
+              </div>
               <textarea class="t-area-2" v-model="this.newJournalPost.post"></textarea>
             </section>
 
@@ -178,5 +190,42 @@ textarea {
   left: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.image-preview-container {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+.image-preview-container img {
+  width: 100%;
+  display: none;
+  margin-bottom: 30px;
+}
+
+.image-preview-container input {
+  display: none;
+}
+
+.image-preview-container label {
+  display: block;
+  width: 45%;
+  height: 45px;
+  margin-left: 25%;
+  text-align: center;
+  background: black;
+  color: #fff;
+  font-size: 15px;
+  text-transform: Uppercase;
+  font-weight: 400;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
