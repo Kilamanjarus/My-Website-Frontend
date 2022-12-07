@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     journalPostIndex: function () {
-      axios.get("http://localhost:3000/blogged.json").then(response => {
+      axios.get("https://kilamanjarus-me.herokuapp.com/blogged.json").then(response => {
         console.log(response.data)
         this.journalPost = response.data
         console.log(this.journalPost)
@@ -33,7 +33,7 @@ export default {
       })
     },
     contactEmailPost: function () {
-      axios.post("http://localhost:3000/emails.json", this.email).then(response => {
+      axios.post("https://kilamanjarus-me.herokuapp.com/emails.json", this.email).then(response => {
         console.log(response.data)
       })
     }

@@ -34,7 +34,7 @@ export default {
 
       console.log(myFormData)
 
-      axios.post('upload_file', myFormData, {
+      axios.post('https://kilamanjarus-me.herokuapp.com/blogs.json', myFormData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -46,7 +46,7 @@ export default {
         this.postProblems();
       })
 
-      // axios.post("http://localhost:3000/blogs.json", , {
+      // axios.post("https://kilamanjarus-me.herokuapp.com/blogs.json", , {
       //   headers: {
       //     'Content-Type': multipart / formdata
       //   }
@@ -72,7 +72,7 @@ export default {
       this.newProblemsPost.forEach(problem => {
         // console.log(problem)
         problem.blog_post_id = this.jpID
-        axios.post("http://localhost:3000/problems.json", problem).then(response => {
+        axios.post("https://kilamanjarus-me.herokuapp.com/problems.json", problem).then(response => {
           // console.log(response.data)
         })
       })
@@ -81,7 +81,7 @@ export default {
       this.newGoalsPost.forEach(goal => {
         // console.log(goal)
         goal.blog_post_id = this.jpID
-        axios.post("http://localhost:3000/goals.json", goal).then(response => {
+        axios.post("https://kilamanjarus-me.herokuapp.com/goals.json", goal).then(response => {
           // console.log(response.data)
         })
       })

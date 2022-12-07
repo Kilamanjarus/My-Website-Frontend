@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     journalPostIndex: function () {
-      axios.get("http://localhost:3000/blogs.json").then(response => {
+      axios.get("https://kilamanjarus-me.herokuapp.com/blogs.json").then(response => {
         console.log(response.data)
         this.journalPosts = response.data.reverse()
         // this.journalPosts = this.journalPosts.reverse()
