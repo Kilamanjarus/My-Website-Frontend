@@ -22,6 +22,13 @@ export default {
         this.journalPost = this.journalPosts[this.journalPosts.length - 1]
         // console.log(this.journalPosts)
         console.log(this.journalPost)
+        this.imageSrc = URL.createObjectURL(this.journalPost.image)
+        this.imagePreviewElement = document.querySelector("#preview-selected-image");
+        this.imagePreviewElement.src = this.imageSrc;
+        this.imagePreviewElement.style.display = "block";
+        console.log(this.imageSrc)
+        console.log(this.imagePreviewElement)
+
       }).catch(error => {
         this.error = error.data
       })
@@ -110,7 +117,7 @@ export default {
 
     <!-- Three Work Journal -->
     <section id="three" class="spotlight style3 left">
-      <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+      <span class="image fit main bottom"><img id="preview-selected-image" alt="" /></span>
       <div class="content">
         <header>
           <h2 class="side-bar-head">Work Journal #{{ this.journalPosts.length }}</h2>

@@ -16,7 +16,9 @@ export default {
 
       inputName: "",
       inputDescription: "",
-      inputPicture: null
+      inputPicture: null,
+      imageSrc: null,
+      imagePreviewElement: null,
     };
   },
   created: function () { },
@@ -24,13 +26,47 @@ export default {
     postJournal: function () {
       this.newJournalPost.image = this.inputPicture
 
-      axios.post("http://localhost:3000/blogs.json", this.newJournalPost).then(response => {
-        // console.log(response.data)
+      var myFormData = new FormData();
+      myFormData.append('pictureFile', document.getElementById('blog-post-image').files[0]);
+      myFormData.append('title', this.newJournalPost.title);
+      myFormData.append('post', this.newJournalPost.post);
+      myFormData.append('date', this.newJournalPost.date);
+
+      console.log(myFormData)
+
+      axios.post('http://localhost:3000/blogs.json', myFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(response => {
+        console.log(response.data)
         this.jpID = response.data.id
         // console.log(this.jpID)
         this.postGoals();
         this.postProblems();
       })
+
+      // axios.post("http://localhost:3000/blogs.json", , {
+      //   headers: {
+      //     'Content-Type': multipart / formdata
+      //   }
+      // }).then(response => {
+      //   // console.log(response.data)
+      //   this.jpID = response.data.id
+      //   // console.log(this.jpID)
+      //   this.postGoals();
+      //   this.postProblems();
+      // })
+    },
+    uploadFile: function () {
+      this.imageSrc = URL.createObjectURL(document.getElementById('blog-post-image').files[0]);
+      this.imagePreviewElement = document.querySelector("#preview-selected-image");
+      this.imagePreviewElement.src = this.imageSrc;
+      this.imagePreviewElement.style.display = "block";
+      console.log(this.imageSrc)
+      console.log(document.querySelector("#preview-selected-image"))
+      this.inputPicture = document.getElementById('blog-post-image').files[0]
+      // console.log(this.inputPicture === null || this.inputPicture === {})
     },
     postProblems: function () {
       this.newProblemsPost.forEach(problem => {
@@ -62,16 +98,6 @@ export default {
       this.newProblem = {}
       // console.log(this.newProblemsPost)
     },
-    previewImage: function (event) {
-      imageFiles = event.target.files;
-      imageFilesLength = this.imageFiles.length;
-      if (this.imageFilesLength > 0) {
-        imageSrc = URL.createObjectURL(imageFiles[0]);
-        imagePreviewElement = document.querySelector("#preview-selected-image");
-        this.imagePreviewElement.src = this.imageSrc;
-        this.imagePreviewElement.style.display = "block";
-      }
-    },
   },
 };
 </script>
@@ -93,13 +119,9 @@ export default {
               <br />
               <div>Image Attachment
               </div>
-              <div class="image-preview-container">
-                <div class="preview">
-                  <img id="preview-selected-image" />
-                </div>
-                <label for="file-upload">Upload Image</label>
-                <input type="file" id="file-upload" accept="image/*" onchange="previewImage(event)" />
-              </div>
+              <img id="preview-selected-image" />
+              <input type="file" id="blog-post-image" accept="image/png, image/jpeg" @change=uploadFile()>
+              <br />
               <textarea class="t-area-2" v-model="this.newJournalPost.post"></textarea>
             </section>
 
@@ -190,42 +212,5 @@ textarea {
   left: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-.image-preview-container {
-  width: 50%;
-  margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  border-radius: 20px;
-}
-
-.image-preview-container img {
-  width: 100%;
-  display: none;
-  margin-bottom: 30px;
-}
-
-.image-preview-container input {
-  display: none;
-}
-
-.image-preview-container label {
-  display: block;
-  width: 45%;
-  height: 45px;
-  margin-left: 25%;
-  text-align: center;
-  background: black;
-  color: #fff;
-  font-size: 15px;
-  text-transform: Uppercase;
-  font-weight: 400;
-  border-radius: 5px;
-  border-color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 </style>
