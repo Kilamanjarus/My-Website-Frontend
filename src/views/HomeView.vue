@@ -7,6 +7,7 @@ export default {
       message: "Welcome to my Website!",
       journalPosts: [],
       journalPost: {},
+      journalImage: null,
 
       email: { email: "Enter Your Email Here." },
     };
@@ -16,18 +17,16 @@ export default {
   },
   methods: {
     journalPostIndex: function () {
-      axios.get("http://localhost:3000/blogs.json").then(response => {
+      axios.get("http://localhost:3000/blogged.json").then(response => {
         console.log(response.data)
-        this.journalPosts = response.data
-        this.journalPost = this.journalPosts[this.journalPosts.length - 1]
-        // console.log(this.journalPosts)
+        this.journalPost = response.data
         console.log(this.journalPost)
-        this.imageSrc = URL.createObjectURL(this.journalPost.image)
-        this.imagePreviewElement = document.querySelector("#preview-selected-image");
-        this.imagePreviewElement.src = this.imageSrc;
-        this.imagePreviewElement.style.display = "block";
-        console.log(this.imageSrc)
-        console.log(this.imagePreviewElement)
+        this.journalImage = document.querySelector("#work-journal-image")
+        console.log(this.journalImage)
+        this.journalImage.src = response.data.image_url
+        console.log(this.journalImage.src)
+        this.journalImage.style.display = "block";
+
 
       }).catch(error => {
         this.error = error.data
@@ -117,7 +116,7 @@ export default {
 
     <!-- Three Work Journal -->
     <section id="three" class="spotlight style3 left">
-      <span class="image fit main bottom"><img id="preview-selected-image" alt="" /></span>
+      <span class="image fit main bottom"><img id="work-journal-image" src="" alt="" /></span>
       <div class="content">
         <header>
           <h2 class="side-bar-head">Work Journal #{{ this.journalPosts.length }}</h2>

@@ -34,7 +34,7 @@ export default {
 
       console.log(myFormData)
 
-      axios.post('http://localhost:3000/blogs.json', myFormData, {
+      axios.post('upload_file', myFormData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
