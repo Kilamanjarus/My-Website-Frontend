@@ -9,6 +9,7 @@ export default {
       newGoalsPost: [],
       newProblemsPost: [],
 
+      day: "Friday",
       jpID: 0,
 
       newProblem: {},
@@ -32,19 +33,21 @@ export default {
       myFormData.append('post', this.newJournalPost.post);
       myFormData.append('date', this.newJournalPost.date);
 
-      console.log(myFormData)
-
-      axios.post('https://kilamanjarus-me.herokuapp.com/blogs.json', myFormData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(response => {
-        console.log(response.data)
-        this.jpID = response.data.id
-        // console.log(this.jpID)
-        this.postGoals();
-        this.postProblems();
-      })
+      // console.log(myFormData)
+      if (this.day === "Friday") {
+        axios.post('https://kilamanjarus-me.herokuapp.com/blogs.json', myFormData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(response => {
+          // console.log(response.data)
+          this.jpID = response.data.id
+          // console.log(this.jpID)
+          this.postGoals();
+          this.postProblems();
+          window.location.href = ""
+        })
+      }
 
       // axios.post("https://kilamanjarus-me.herokuapp.com/blogs.json", , {
       //   headers: {
@@ -63,8 +66,8 @@ export default {
       this.imagePreviewElement = document.querySelector("#preview-selected-image");
       this.imagePreviewElement.src = this.imageSrc;
       this.imagePreviewElement.style.display = "block";
-      console.log(this.imageSrc)
-      console.log(document.querySelector("#preview-selected-image"))
+      // console.log(this.imageSrc)
+      // console.log(document.querySelector("#preview-selected-image"))
       this.inputPicture = document.getElementById('blog-post-image').files[0]
       // console.log(this.inputPicture === null || this.inputPicture === {})
     },
@@ -208,9 +211,6 @@ textarea {
 
 .vertical-center-jp-button {
   margin: 0;
-  position: absolute;
-  left: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  text-align: center;
 }
 </style>
