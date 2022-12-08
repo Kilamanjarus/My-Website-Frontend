@@ -48,18 +48,6 @@ export default {
           window.location.href = ""
         })
       }
-
-      // axios.post("https://kilamanjarus-me.herokuapp.com/blogs.json", , {
-      //   headers: {
-      //     'Content-Type': multipart / formdata
-      //   }
-      // }).then(response => {
-      //   // console.log(response.data)
-      //   this.jpID = response.data.id
-      //   // console.log(this.jpID)
-      //   this.postGoals();
-      //   this.postProblems();
-      // })
     },
     uploadFile: function () {
       this.imageSrc = URL.createObjectURL(document.getElementById('blog-post-image').files[0]);

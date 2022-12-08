@@ -18,13 +18,13 @@ export default {
   methods: {
     journalPostIndex: function () {
       axios.get("https://kilamanjarus-me.herokuapp.com/blogged.json").then(response => {
-        console.log(response.data)
+        // console.log(response.data)
         this.journalPost = response.data
-        console.log(this.journalPost)
+        // console.log(this.journalPost)
         this.journalImage = document.querySelector("#work-journal-image")
-        console.log(this.journalImage)
+        // console.log(this.journalImage)
         this.journalImage.src = response.data.image_url
-        console.log(this.journalImage.src)
+        // console.log(this.journalImage.src)
         this.journalImage.style.display = "block";
 
 
@@ -34,7 +34,7 @@ export default {
     },
     contactEmailPost: function () {
       axios.post("https://kilamanjarus-me.herokuapp.com/emails.json", this.email).then(response => {
-        console.log(response.data)
+        // console.log(response.data)
       })
     }
   },
