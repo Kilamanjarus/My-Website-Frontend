@@ -42,7 +42,8 @@ export default {
             family where I can raise my own livestock and grown my own food. To do this, I've researched into a few
             different ways of growing food, and a lot of what I came back with was wasteful on something, be that water,
             area, or even ground quality in the long term. Permaculter seems to be the perfect answer to every problem
-            that we face in our current style of farming.</p>
+            that we face in our current style of farming. Beyond that, I appreciate how it approaches farming form a
+            Natural perspective, aiming to get plants to coexist and mutually benefit each other.</p>
           <h3>Why Does Permaculture Work?</h3>
           <p>"The philosophy behind permaculture is one of working with, rather than against, nature; of protracted and
             thoughtful observation rather than protracted and thoughtless action; of looking at systems in all their
@@ -82,7 +83,7 @@ export default {
 
         <!-- Content -->
         <section id="content">
-          <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+          <a href="#" class="image fit"><img src="images/pic08.png" alt="" /></a>
           <h3>Why Care?</h3>
           <p>Not everyone has the land to create a large Permaculture farm, and some don't own any physical land at all.
             Aquaponics is the solution for both of these! A system the use the waste of the fish that it grows for food,
@@ -90,20 +91,6 @@ export default {
           <p>As the prices of groceries only increase, a system that produces little to no waste and maximizes the
             product that the consumer receives is a great way to help! Tilapia is the most commonly used fish in
             aquaponics, while also being a fairly tasty fish used in food too!</p>
-          <h3>Sed Magna Ornare</h3>
-          <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse
-            euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam
-            gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus. In accumsan lorem nunc ultrices a ac eu
-            accumsan ac id nullam. Nec lobortis. Faucibus. Mi commodo laoreet arcu at non mi lacinia aliquet non
-            lobortis phasellus accumsan nascetur varius. Integer orci porttitor eu faucibus aliquet faucibus ac accumsan
-            adipiscing accumsan odio. Ut adipiscing.</p>
-          <ul>
-            <li>Faucibus orci lobortis ac adipiscing integer.</li>
-            <li>Col accumsan arcu mi aliquet placerat.</li>
-            <li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-            <li>Blandit massa non blandit tempor interdum.</li>
-            <li>Lacinia mattis arcu nascetur lobortis.</li>
-          </ul>
         </section>
 
       </div>
