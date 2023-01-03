@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import JournalCreate from '../views/JournalCreate.vue'
 import JournalsView from '../views/JournalsView.vue'
+import JournalView from '../views/JournalView.vue'
 import MyArtView from '../views/MyArtView.vue'
 import RandomInterestView from '../views/RandomInterestView.vue'
 
@@ -20,6 +21,11 @@ const routes = [
     path: '/journals',
     name: 'journals',
     component: JournalsView
+  },
+  {
+    path: '/journals/:id',
+    name: 'journal-show',
+    component: JournalView
   },
   {
     path: '/art',

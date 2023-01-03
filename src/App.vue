@@ -40,7 +40,7 @@
       </ul>
     </footer>
   </div>
-
+  <base href="/">
   <component is="script" src="/assets/js/jquery.min.js"></component>
   <component is="script" src="/assets/js/jquery.scrolly.min.js">
   </component>
