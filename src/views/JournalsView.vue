@@ -37,8 +37,7 @@ export default {
         <!-- Content -->
         <div v-for="journalPost in this.journalPosts">
           <section id="content">
-            <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-            <h3>{{ journalPost.title }}</h3>
+            <h3> <a v-bind:href="`/journals/${journalPost.id}`">{{ journalPost.title }}</a></h3>
             <p>{{ journalPost.post }}</p>
             <h3>Problems</h3>
             <ul v-for="problem in journalPost.problems">
