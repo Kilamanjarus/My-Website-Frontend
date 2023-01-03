@@ -119,8 +119,7 @@ export default {
       <span class="image fit main bottom"><img id="work-journal-image" src="" alt="" /></span>
       <div class="content">
         <header>
-          <h2 class="side-bar-head">Work Journal #{{ this.journalPosts.length }}</h2>
-          <h2 class="side-bar-title">{{ this.journalPost.title }}</h2>
+          <h2 class="side-bar-head">Work Journal: {{ this.journalPost.title }}</h2>
         </header>
         <h1 class="side-bar-text">{{ this.journalPost.post }}</h1>
         <!-- <h3 class="side-bar-title">Problems</h3>
@@ -144,23 +143,30 @@ export default {
         <div class="box alt">
           <div class="row gtr-uniform">
             <section class="col-4 col-6-medium col-12-xsmall">
-              <span class="icon solid alt major fa-dumbbell"></span>
-              <h3>Workout your Workouts!</h3>
-              <p>A website built to customize workouts with a database of over 1300+ exercises using a backend RESTful
-                API with MVC architecture built with Ruby on Rails, and a frontend multi page
-                application built with npm, webpack, Vue.js, and Bootstrap.</p>
+              <a href="https://github.com/Kilamanjarus/Capstone-frontend">
+                <span class="icon solid alt major fa-dumbbell"></span>
+                <h3>Workout your Workouts!</h3>
+                <p>A website built to customize workouts with a database of over 1300+ exercises using a backend RESTful
+                  API with MVC architecture built with Ruby on Rails, and a frontend multi page
+                  application built with npm, webpack, Vue.js, and Bootstrap.</p>
+              </a>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <span class="icon solid alt major fa-cube"></span>
-              <h3>My Sketchfab</h3>
-              <p>Here is where I post a lot of my 3D art! Its hosted on a website where it is rendered and manipulatable
-                in a 360 degree fashion, its a
-                perfect website for any 3D artist!</p>
+              <a href="https://github.com/Kilamanjarus/">
+                <span class="icon solid alt major fa-cube"></span>
+                <h3>My Sketchfab</h3>
+                <p>Here is where I post a lot of my 3D art! Its hosted on a website where it is rendered and
+                  manipulatable
+                  in a 360 degree fashion, its a
+                  perfect website for any 3D artist!</p>
+              </a>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <span class="icon solid alt major fa-code-branch"></span>
-              <h3>My Github</h3>
-              <p>Here is where you will find most, if not all, of my projects!</p>
+              <a href="https://sketchfab.com/Kilamanjarus">
+                <span class="icon solid alt major fa-code-branch"></span>
+                <h3>My Github</h3>
+                <p>Here is where you will find most, if not all, of my projects!</p>
+              </a>
             </section>
             <!-- <section class="col-4 col-6-medium col-12-xsmall">
               <span class="icon solid alt major fa-paper-plane"></span>
