@@ -14,7 +14,8 @@ export default {
     journalPostView: function () {
       axios.get(`https://kilamanjarus-me.herokuapp.com/blogs/${this.$route.params.id}.json`).then(response => {
         this.journalPost = response.data
-        console.log(this.journalPost)
+        // console.log(this.journalPost)
+        // console.log(this.journalPost.problems)
         this.journalImage = document.querySelector("#work-journal-image")
         // console.log(this.journalImage)
         this.journalImage.src = response.data.image_url
@@ -48,7 +49,6 @@ export default {
             <li>{{ goal.goal }}</li>
           </ul>
         </section>
-
       </div>
     </div>
   </div>
