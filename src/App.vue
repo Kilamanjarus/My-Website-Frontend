@@ -40,21 +40,21 @@
       </ul>
     </footer>
   </div>
-  <base href="/">
-  <component is="script" src="/assets/js/jquery.min.js"></component>
-  <component is="script" src="/assets/js/jquery.scrolly.min.js">
+
+  <component is="script" src="assets/js/jquery.min.js"></component>
+  <component is="script" src="assets/js/jquery.scrolly.min.js">
   </component>
-  <component is="script" src="/assets/js/jquery.dropotron.min.js">
+  <component is="script" src="assets/js/jquery.dropotron.min.js">
   </component>
-  <component is="script" src="/assets/js/jquery.scrollex.min.js">
+  <component is="script" src="assets/js/jquery.scrollex.min.js">
   </component>
-  <component is="script" src="/assets/js/browser.min.js">
+  <component is="script" src="assets/js/browser.min.js">
   </component>
-  <component is="script" src="/assets/js/breakpoints.min.js">
+  <component is="script" src="assets/js/breakpoints.min.js">
   </component>
-  <component is="script" src="/assets/js/util.js">
+  <component is="script" src="assets/js/util.js">
   </component>
-  <component is="script" src="/assets/js/main.js">
+  <component is="script" src="assets/js/main.js">
   </component>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css"
     integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
