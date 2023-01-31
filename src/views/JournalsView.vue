@@ -38,6 +38,7 @@ export default {
         <div v-for="journalPost in this.journalPosts">
           <section id="content">
             <h3> <a v-bind:href="`/journals/${journalPost.id}`">{{ journalPost.title }}</a></h3>
+            <p>{{ journalPost.date }}</p>
             <p>{{ journalPost.post }}</p>
             <h3>Problems</h3>
             <ul v-for="problem in journalPost.problems">

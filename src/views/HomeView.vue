@@ -121,6 +121,7 @@ export default {
         <header>
           <h2 class="side-bar-head">Work Journal: {{ this.journalPost.title }}</h2>
         </header>
+        <h1 class="side-bar-text">{{ this.journalPost.date }}</h1>
         <h1 class="side-bar-text">{{ this.journalPost.post }}</h1>
         <!-- <h3 class="side-bar-title">Problems</h3>
         <h1 class="side-bar-text">{{ this.journalPost.problems }}</h1>
