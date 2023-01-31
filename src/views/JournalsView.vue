@@ -15,7 +15,8 @@ export default {
     journalPostIndex: function () {
       axios.get("https://kilamanjarus-me.herokuapp.com/blogs.json").then(response => {
         // console.log(response.data)
-        this.journalPosts = response.data.reverse()
+        this.journalPosts = response.data
+        this.journalPosts.sort((a, b) => a.id - b.id)
         // this.journalPosts = this.journalPosts.reverse()
         // console.log(this.journalPosts)
         // console.log(this.journalPost)
